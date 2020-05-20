@@ -84,8 +84,8 @@ RIGHT JOIN customers
 ON orders.customer_id = customers.customer_id;
 
 -- 15
-SELECT employees.city, employees.country
-INNER JOIN employees ON employees.country = 'France';
+SELECT employees.city, employees.country FROM Customers 
+INNER JOIN employees ON employees.city = 'London';
 
 -- 16
 SELECT orders.ship_name, order_details.order_id, products.discontinued
@@ -95,8 +95,10 @@ INNER JOIN products ON orders.ship_name = order_details.order_id)
 WHERE products.discontinued = '1'; 
 
 -- 17
-SELECT first_name FROM employees
-WHERE reports_to = '0';
 
+SELECT first_name FROM employees WHERE reports_to IS NULL;
+
+
+-- No one reports to Andrew - data type is small int. Where is the data dictionary?
 SELECT first_name FROM employees
-WHERE reports_to = '2';
+WHERE reports_to = 'Andrew';
