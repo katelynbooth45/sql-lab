@@ -84,7 +84,7 @@ RIGHT JOIN customers
 ON orders.customer_id = customers.customer_id;
 
 -- 15
-SELECT employees.city, employees.country FROM Customers 
+SELECT employees.city, employees.country FROM customers 
 INNER JOIN employees ON employees.city = 'London';
 
 -- 16
