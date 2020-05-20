@@ -44,7 +44,6 @@ VALUES (
 '2488359057',
 '2483964472');
 
-
 -- 9
 UPDATE orders
 SET ship_region = 'EuroZone'
@@ -88,17 +87,13 @@ SELECT employees.city, employees.country FROM customers
 INNER JOIN employees ON employees.city = 'London';
 
 -- 16
-SELECT orders.ship_name, order_details.order_id, products.discontinued
-FROM ((orders
-INNER JOIN order_details ON orders.ship_name = products.discontinued)
-INNER JOIN products ON orders.ship_name = order_details.order_id)
-WHERE products.discontinued = '1'; 
+SELECT ship_name FROM orders 
+INNER JOIN order_details ON order_details.order_id=orders.order_id 
+INNER JOIN products ON products.product_id=order_details.product_id 
+WHERE discontinued='1';
 
 -- 17
 
 SELECT first_name FROM employees WHERE reports_to IS NULL;
 
-
--- No one reports to Andrew - data type is small int. Where is the data dictionary?
-SELECT first_name FROM employees
-WHERE reports_to = 'Andrew';
+SELECT first_name FROM employees WHERE reports_to = 2;
