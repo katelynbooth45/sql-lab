@@ -1,5 +1,5 @@
 -- 1
-SELECT * from Customers;
+SELECT * from customers;
 
 -- 2
 SELECT country FROM customers;
@@ -83,8 +83,8 @@ RIGHT JOIN customers
 ON orders.customer_id = customers.customer_id;
 
 -- 15
-SELECT employees.city, employees.country FROM customers 
-INNER JOIN employees ON employees.city = 'London';
+SELECT orders.ship_city, employees.city FROM orders 
+INNER JOIN employees ON orders.ship_city = employees.city WHERE employees.city = 'London';
 
 -- 16
 SELECT ship_name FROM orders 
