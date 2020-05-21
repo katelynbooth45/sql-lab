@@ -10,7 +10,7 @@ SELECT customer_id FROM Customers where customer_id LIKE 'BL%';
 SELECT * FROM orders LIMIT 100;
 
 -- 5
-SELECT * FROM customers WHERE postal_code LIKE '%1010' OR postal_code LIKE '%3012' OR postal_code LIKE '%12209' OR postal_code LIKE '%05023';
+SELECT * FROM customers WHERE postal_code LIKE '%1010' AND postal_code LIKE '%3012' AND postal_code LIKE '%12209' AND postal_code LIKE '%05023';
 
 -- 6
 SELECT * FROM orders WHERE NOT ship_region = 'NULL';
