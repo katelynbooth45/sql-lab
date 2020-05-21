@@ -6,6 +6,7 @@ SELECT country FROM customers;
 
 -- 3
 SELECT customer_id FROM Customers where customer_id LIKE 'BL%';
+
 -- 4
 SELECT * FROM orders LIMIT 100;
 
